@@ -17,18 +17,18 @@ document.addEventListener('DOMContentLoaded' , () => {
 
    let gameTimerId = setInterval(startGame, 20) // 20 milisecond
 
-   function control(e) {
-       if (e.keyCode === 32) {
-           jump()
-       }
-   }
+//    function control(e) {
+//        if (e.keyCode === 32) {
+//            jump()
+//        }
+//    }
 
    function jump() {
        if (birdBottom < 500) birdBottom += 50   
         bird.style.bottom = birdBottom + 'px'
         console.log(birdBottom);
    }
-   document.addEventListener('keyup', control)
+   document.addEventListener('click', jump)
 
 
 
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded' , () => {
         clearInterval(gameTimerId)
         console.log('game over');
         isGameOver = true
-        document.removeEventListener('keyup' , control)
+        document.removeEventListener('click' , jump)
         
     }
   
